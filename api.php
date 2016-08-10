@@ -20,18 +20,20 @@ if(@$_GET["token"]==$_token){
 		
 		foreach ($_mods as $value){
 			$x=$x+1;
+			$_ext=explode(".",$_mods[$x][1]);
+			@$_ext=end($_ext);
 			$_server_list[$_dl_server.$_mods[$x][1]]=$value[0];
 			$_server_arr[$x]=$value[0];
+			$_server_exts[$value[0]]=$_ext;
 			unset($_mods[$x][1]);
 		}
 		
 		$result_dl=array_diff($_server_arr,$_post_arr);
 		$result_del=array_diff($_post_arr,$_server_arr);
 		$x=-1;
-		
 		foreach($result_dl as $data){
 			$x=$x+1;
-			$result_dls[$x]=array_search($data,$_server_list);
+			$result_dls[$x]=[0=>$_server_exts[$data],1=>array_search($data,$_server_list)];
 		}
 		
 		if($result_dl || $_result_del){
