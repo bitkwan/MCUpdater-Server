@@ -1,2 +1,8 @@
 # mcupdater-server
-mcupdater for server
+API SERVER For MCUpdater
+
+# Client
+https://github.com/bitkwan/mcupdater
+
+# Changelog
+- Never
