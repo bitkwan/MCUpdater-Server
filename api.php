@@ -32,10 +32,12 @@ if(@$_GET["token"]==$_token){
 			$_json_arr=["update"=>0];
 		}
 		
-		print_r(json_encode($_json_arr));
 	}else{
-		echo "Json Error";
+		$_json_arr=["update"=>-1];
 	}
 }else{
-	echo "Token Error";
+	$_json_arr=["update"=>-2];
 }
+
+
+print_r(json_encode($_json_arr));
