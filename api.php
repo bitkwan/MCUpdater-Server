@@ -16,18 +16,26 @@ if(@$_GET["token"]==$_token){
 		}
 		
 		$x=-1;
+		$_server_list=[];
+		
 		foreach ($_mods as $value){
 			$x=$x+1;
+			$_server_list[$_dl_server.$_mods[$x][1]]=$value[0];
 			$_server_arr[$x]=$value[0];
 			unset($_mods[$x][1]);
 		}
 		
 		$result_dl=array_diff($_server_arr,$_post_arr);
 		$result_del=array_diff($_post_arr,$_server_arr);
-		#print($_server_arr);
 		$x=-1;
+		
+		foreach($result_dl as $data){
+			$x=$x+1;
+			$result_dls[$x]=array_search($data,$_server_list);
+		}
+		
 		if($result_dl || $_result_del){
-			@$_json_arr=["update"=>1,"down"=>$result_dl,"del"=>$result_del];
+			@$_json_arr=["update"=>1,"down"=>$result_dls,"del"=>$result_del];
 		}else{
 			$_json_arr=["update"=>0];
 		}
