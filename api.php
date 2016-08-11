@@ -36,8 +36,14 @@ if(@$_GET["token"]==$_token){
 			$result_dls[$x]=[0=>$_server_exts[$data],1=>array_search($data,$_server_list)];
 		}
 		
-		if($result_dl || $_result_del){
-			@$_json_arr=["update"=>1,"down"=>$result_dls,"del"=>$result_del];
+		$x=-1;
+		foreach($result_del as $data){
+			$x=$x+1;
+			$result_dels[$x]=$data;
+		}
+		
+		if(@$result_dl || @$_result_del){
+			@$_json_arr=["update"=>1,"down_total"=>count($result_dls),"down"=>$result_dls,"del"=>$result_dels];
 		}else{
 			$_json_arr=["update"=>0];
 		}
