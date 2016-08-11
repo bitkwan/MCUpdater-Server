@@ -1,4 +1,4 @@
-# mcupdater-server
+# MCUpdater-Server
 API SERVER For MCUpdater
 
 # Request
@@ -16,3 +16,4 @@ https://github.com/bitkwan/mcupdater
 # Changelog
 - 1.0 (20160811):
 	Delete&download list‘s json output
+	Custom for download server
