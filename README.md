@@ -14,6 +14,6 @@ You can open the **core/config.php** and change it.
 https://github.com/bitkwan/mcupdater
 
 # Changelog
-- 1.0 (20160811):
-	Delete&download list‘s json output
-	Custom for download server
+1.0 (20160811):
+- Delete&download list‘s json output
+- Custom for download server
