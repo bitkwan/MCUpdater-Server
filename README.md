@@ -14,6 +14,9 @@ You can open the **core/config.php** and change it.
 https://github.com/bitkwan/mcupdater
 
 # Changelog
+1.0.2 (20160824):
+- Fix bug
+
 1.0.1 (20160812):
 - Fix bugs
 
